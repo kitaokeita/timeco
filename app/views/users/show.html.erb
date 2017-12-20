@@ -1,0 +1,116 @@
+
+
+            <div class="col-sm-12">
+             <div class="container">
+               <div class="row">
+             
+                <div class="jumbotron" id="usershowjjumbotron">
+                 
+                  　<!-- 背景の色// -->
+                    <h1 class="display-3">  </h1>
+                    <p class="lead">　
+                     <p class="text-center">
+
+                    　<%= image_tag current_user.gravatar_url %><%= @user.username %>
+                    	</p>
+                    </p>
+                    <hr class="my-4">
+                    <div id="userselfintroduction1">
+                    自己紹介文<br>
+                     <%= @user.Selfintroduction %>
+                    </div>
+                    
+                    </p>
+                    
+                  </div>　
+             </div>
+            </div>
+          </div>
+            <div class="col-sm-12">
+             <div id="usershowall">このユーザーの全てのタイムシェア　</div>
+           
+             <% @ticket.each do |ticket| %>
+           
+             
+
+                  
+
+                 
+             　
+               <div class="col-md-4">
+                <div id="usershowsqaure">
+                
+               
+                 <p class="text-center">
+                     
+               
+               
+                <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <th scope="row">種類</div></th>
+                                <td> <%= ticket.sort %></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">タイムシェアの題名</th>
+                                <td><%= ticket.timeuse %>
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">使える時間</th>
+                                <td>
+                                    <%= ticket.timeuse %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">価格</th>
+                                <td><%= ticket.price %>
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">手段</th>
+                                <td><%= ticket.area %>
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">内容</th>
+                                <td><%= ticket.content %>
+                                    
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                     </p>
+
+               
+
+                </div>
+               
+                </div>
+              
+
+                  
+                 
+                      
+                   
+   
+                 
+                 
+                  <% end %>
+                  
+                  
+
+                     
+          　</div>          
+            <div class="col-sm-12">
+            
+                 <h1> レビユーをする</h1>
+            </div>
+       
+ 
+
+    

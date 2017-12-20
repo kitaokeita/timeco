@@ -1,0 +1,100 @@
+<div class="col-sm-12">
+             
+          </div>
+            <div class="col-sm-12">
+             <div id="usershowall">ランダムおすすめ　<br>
+             あなた以外のタイムシェアチェットをランダムに６個まで表示する
+             </div>
+           
+             <% @ticket.each do |ticket| %>
+           
+             
+
+                  
+
+                 
+             　
+               <div class="col-md-4">
+                <div id="usershowsqaure">
+                
+               
+                 <p class="text-center">
+                     
+               
+               
+                <table class="table table-striped">
+                        <tbody>
+
+                        <tr>
+                                <th scope="row">種類</div></th>
+                                <td> <%= ticket.user_id %></td>
+                            </tr>
+                         
+                                
+                    
+                            <tr>
+                                <th scope="row">種類</div></th>
+                                <td> <%= ticket.sort %></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">タイムシェアの題名</th>
+                                <td><%= ticket.timeuse %>
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">使える時間</th>
+                                <td>
+                                    <%= ticket.timeuse %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">価格</th>
+                                <td><%= ticket.price %>
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">手段</th>
+                                <td><%= ticket.area %>
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">内容</th>
+                                <td><%= ticket.content %>
+                                    
+                                </td>
+                            </tr>
+                               <th scope="row">リンク</th>
+                                <td><%= link_to  "このタイムシェアのリンクする", ticket_path(ticket) %>
+                                    
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                     </p>
+
+               
+
+                </div>
+               
+                </div>
+              
+
+                  
+                 
+                      
+                   
+   
+                 
+                 
+                  <% end %>
+                  
+                  
+
+                     
+          　</div>          
+            
+    

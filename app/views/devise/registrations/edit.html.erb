@@ -1,0 +1,73 @@
+<div class="container">
+ <div class="wrapper">
+  <div class="col-sm-6 col-md-8 col-md-offset-2", id="singupbackground">
+   <div class="col-sm-6 col-md-4 col-md-offset-4">
+   <h2>プロフィール変更</h2>
+
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+             <% unless resource.errors.empty? %>
+        　<script type= "text/javascript">
+        　　<% resource.errors.full_messages.each do |msg| %>
+        　　　toastr.error('<%= msg %>');
+        　　<% end %>
+        　</script>
+        <% end %>
+
+
+                      <div class="field">
+                <%= f.label :名前の変更 %><br />
+                <%= f.text_field :username,:class => 'form-control', autofocus: true %>
+              </div>
+
+              <div class="field">
+                <%= f.label :メールアドレス変更 %><br />
+                <%= f.email_field :email, :class => 'form-control',autofocus: true %>
+              </div>
+
+              <div class="field">
+                <%= f.label :自己紹介欄 %><br />
+                <%= f.text_area :Selfintroduction, :class => 'form-control', :size => "20x10",:placeholder => "自分は、鉄鋼系メーカーで働いてします。...", autofocus: true %>
+              </div>
+
+             
+
+              <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+              <% end %>
+
+              
+
+              <div class="field">
+                <%= f.label "変更の確認のために、現在のパスワードを記入してください" %> <br />
+                <%= f.password_field :current_password, :class => 'form-control',autocomplete: "off" %>
+              </div><br>
+
+              <div class="field">
+                <%= f.label "パスワードを変更したい人は、記入ください" %> <br />
+                <%= f.password_field :password, :class => 'form-control',autocomplete: "off" %>
+                <% if @minimum_password_length %>
+                  <br />
+                  <em><%= @minimum_password_length %> 文字以上</em>
+                <% end %>
+              </div>
+
+              <div class="field">
+                <%= f.label "パスワードを変更したい人は、記入ください(二回め)
+                " %><br />
+                <%= f.password_field :password_confirmation,:class => 'form-control', autocomplete: "off" %>
+              </div>
+
+              <div class="actions">
+                <%= f.submit "パスワード変更の更新" %>
+              </div>
+            <% end %>
+
+            <h3>アカウント削除について</h3>
+
+            <p> <%= button_to "アカウントを消しますか", registration_path(resource_name), data: { confirm: "本当に消しますか?" }, method: :delete %></p>
+
+            <%= link_to 'ホームに戻る', home_show_path %>
+            </div>
+       </div>
+   </div>
+</div>  

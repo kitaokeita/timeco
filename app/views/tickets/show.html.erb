@@ -1,0 +1,79 @@
+<div class="col-sm-6 col-md-4 col-md-offset-4">
+  <table class="table table-sm table-inverse bg-success" >
+  <thead>
+    <tr>
+      <th>項目</th>
+      <th>内容</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">タイムシェアのタイトル</th>
+      <td><%= @ticket.title %></td>
+     
+    </tr>
+    <tr>
+      <th scope="row">タイムシェアの説明</th>
+      <td><%= @ticket.content %></td>
+      
+    </tr>
+    <tr>
+      <th scope="row">使える時間</th>
+      <td><%= @ticket.timeuse %></td>
+    </tr>
+
+    <tr>
+      <th scope="row">タイムシェア種類</th>
+      <td><%= @ticket.sort %></td>
+    </tr>
+
+    <tr>
+      <th scope="row">価格</th>
+      <td><%= @ticket.price %></td>
+    </tr>
+
+    <tr>
+      <th scope="row">手段</th>
+      <td><%= @ticket.area %></td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+<% if @ticket.user.id == current_user.id %>
+
+あなたが作ったタイムシェあのため予約できないです
+
+<% else %>
+<div class="col-sm-6 col-md-4 col-md-offset-4">
+
+
+      
+    <%= form_for [@ticket, @ticket.reservation.new] do |f| %>
+
+    <%= f.hidden_field :ticket_id, value: @ticket.id %>
+    <%= f.hidden_field :approval,  value: "未申請" %>
+
+
+
+                                            <label>希望日時<br>
+                                            時間の区切りは30分ごとです。
+                                            </label><br>
+                                            
+                                              <%= f.datetime_select  :startdate, :minute_step => 30  %> 
+                                        
+
+                                    <%= f.submit "この日程で予約する", class: "btn btn-danger btn-wide" %>    
+
+    <% end %>
+
+<% end %>
+
+
+ 
+ 
+    
+    </div>
+

@@ -1,0 +1,68 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "toastr";
+
+
+
+
+.header-top-page {
+  padding: 0;
+  margin: 0;
+}
+
+///home/index//
+.topimage {
+	text-align: center;
+	margin-top: -80px;
+	 opacity: 0.5;
+
+}
+.topguide {
+	height: 400px;
+    background-color: #DCDCDC; 
+}
+
+.topguidemozi {
+	color: #ffffff;
+	margin-top: 80px;
+}
+
+.footdesign {
+	padding: 20px 0;
+	
+   background-color: #333;
+}
+
+#footmozi {
+	color: #ffff00;
+}
+
+#singupbackground {
+	background-color: #EEE8AA;
+	
+}
+
+// /user/show //
+
+#usershowjjumbotron {
+	background-color: #90EE90;
+}
+
+#userselfintroduction1 {
+	color: #F0FFF0;	
+}
+
+#usershowsqaure {
+	height: 300px;
+	width: 100%;
+	background-color: #00ff7f;
+}
+
+#reservationshow {
+	height: 300px;
+	width: 100%;
+	background-color: #00ff7f;
+}
+
+
+

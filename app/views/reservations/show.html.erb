@@ -1,0 +1,40 @@
+<H1>予約内容確認</H1>
+
+<div id="reservationshow">
+<%= @reservation.user.username %>から<%= @reservation.ticket.title %>に予約が来ています。<br>
+
+<table>
+
+<tr>
+<th></th>
+<th></th>
+<th></th>
+	
+
+</tr>
+
+<tr>
+
+<td><%= @reservation.ticket.title %></td>
+<td><%= @reservation.startdate.strftime('%Y年%m月%d日 %H:%M') %></td>
+<td><%= @reservation.approval %></td>
+
+</tr>
+
+</table>
+
+
+
+	
+	
+</div>
+
+<%= form_for @reservation, method: :patch  do |f|%>
+
+<%= f.select :approval, [["承認", "承認"], ["非承認", "非承認"]] %>
+
+ <%= f.submit "この日程で予約する", class: "btn btn-danger btn-wide" %>    
+
+<% end %>
+
+

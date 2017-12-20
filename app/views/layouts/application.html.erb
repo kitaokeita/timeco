@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Timeco</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- user_signed_in? はユーザがログインしているか調べるdeviseのHelperメソッド -->
+    <% if user_signed_in? %> 
+      <!-- current_user は現在ログインしているUserオブジェクトを返すdeviseのHelperメソッド -->
+      <!-- *_path はUserモデルを作成したときに、
+        deviseにより自動で作成されてますので、rake routesで確認できます -->
+
+     <header>
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              
+             
+            </div>
+
+            
+              <ul class="nav navbar-nav">
+                <li class="active"><%= link_to '買う'%><span class="sr-only">(current)</span><</li>
+                <li><%= link_to '売る', new_ticket_path  %></li>
+                  <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="検索">
+                    </div>
+                    <button type="submit" class="btn btn-default btn-sm">検索</button>
+                  </form>
+               </ul>
+
+
+              <ul class="nav navbar-nav navbar-right">
+              　　<li><%= link_to '予約情報', lend_path(current_user) %></li>
+                 <li><%= link_to '予約しているタイムシェア', useside_path(current_user) %></li>
+                
+                <li><%= link_to 'プロフィール変更', edit_user_registration_path %></li> 
+                <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+                
+              </ul>
+          
+          </div>
+        </nav>
+        
+
+
+　　　</header>
+
+    <% else %>
+
+      <header>
+      <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              
+             
+            </div>
+
+            
+              
+
+
+              <ul class="nav navbar-nav navbar-right">
+              　　
+                <li><%= link_to "サインイン", new_user_registration_path %> </li>
+      　　　　　　<li><%= link_to "ログイン", new_user_session_path %></li>
+
+                
+              </ul>
+          
+          </div>
+        </nav>
+
+     
+    </header>
+ 
+    
+    
+    
+   
+        
+
+      
+    <% end %>
+  </nav>
+  </head>
+
+
+  <body>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  
+  <% unless flash.empty? %>
+ 　<script type="text/javascript">
+ 　　<% flash.each do |f| %>
+ 　　　<% type = f[0].to_s.gsub('alert','error').gsub('notice','info') %>
+　　　　　toastr['<%=type %>']('<%=f[1] %>');
+ 　　<% end %>
+　　</script>
+<% end %>
+
+
+
+
+    <%= yield %>
+    
+  </body>
+  
+</html>

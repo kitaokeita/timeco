@@ -1,0 +1,35 @@
+
+<div class="container">
+ <div class="row">
+  <div class="col-md-10 col-md-offset-1">
+<h1>あなたが予約した一覧</h1>
+ 
+
+
+<table class="table table-striped">
+  <tr>
+    <th>名前</th>
+    <th>予約日時</th>
+    <th>承認状況</th>
+    <th>Text</th>
+  </tr>
+
+
+  
+   <% @reservation.each do |reservation| %>
+
+
+      <td><%= reservation.ticket.title %></td>
+      <td><%= reservation.startdate.strftime('%Y年%m月%d日 %H:%M') %></td>
+      <td><%= reservation.approval %></td>
+     
+      <td><%= link_to "リンク", ticket_path(reservation.ticket_id) %></td>
+    </tr>
+
+    <% end %>
+   
+</table>
+</div>
+</div>
+</div>
+

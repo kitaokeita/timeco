@@ -1,0 +1,36 @@
+<div class="container">
+ <div class="row">
+  <div class="col-md-10 col-md-offset-1">
+<h1>すべての投稿</h1>
+ 
+<table class="table table-striped">
+  <tr>
+     <th>種類</th>
+    <th>タイトル</th>
+    <th>内容</th>
+    <th>価格</th>
+    <th>ユーザーid</th>
+    <th>手段</th>
+    <th>使える時間</th>
+     <th colspan="1"></th>
+  </tr>
+ 
+  <% @ticket.each do |ticket| %>
+    <tr>
+      <td><%= ticket.sort %></td>
+      <td><%= ticket.title %></td>
+      <td><%= ticket.content %></td>
+       <td><%= ticket.price %></td>
+       <td><%= ticket.user_id %></td>
+       <td><%= ticket.area %></td>
+       <td><%= ticket.timeuse %></td>
+        <td><%= link_to "delete",ticket,
+                    method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+    </tr>
+    </tr>
+  <% end %>
+</table>
+</div>
+</div>
+</div>

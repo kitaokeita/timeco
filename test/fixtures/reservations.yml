@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  startdate: 2017-11-28 06:44:55
+  enddate: 2017-11-28 06:44:55
+  approval: MyString
+
+two:
+  startdate: 2017-11-28 06:44:55
+  enddate: 2017-11-28 06:44:55
+  approval: MyString

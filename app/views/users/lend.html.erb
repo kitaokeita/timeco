@@ -1,0 +1,36 @@
+<div class="container">
+ <div class="row">
+  <div class="col-md-10 col-md-offset-1">
+
+			<table class="table table-striped">
+			<tr>
+			 <th>タイムシェアする名前</th>
+			 <th>タイムシェアをお願いする人の名前</th>
+			 <th>予約日時</th>
+			 <th>状況</th>
+			 <th>状況変更</th>
+				
+
+
+			</tr>
+			<% @ticket.each do |ticket| %>
+					<% ticket.reservation.each do |reservation| %>
+					
+					<tr>
+					<td><%= ticket.title %></td>
+					<td><%= link_to reservation.user.username,user_path(reservation.user_id) %></td>
+					<td><%= reservation.startdate.strftime('%Y年%m月%d日 %H:%M') %></td>
+					<td><%= reservation.approval %></td>
+					<td><%= link_to  ticket.title, reservation_path(reservation)%></td>
+					</tr>
+					
+					
+					
+
+					<% end %>
+					<% end %>
+					
+			</table>
+</div>
+</div>
+</div>
