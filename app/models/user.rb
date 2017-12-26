@@ -10,5 +10,5 @@ class User < ApplicationRecord
   
   
    has_many :ticket, dependent: :destroy
-   has_many :reservation
+   has_many :reservation,dependent: :destroy
 end
