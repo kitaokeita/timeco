@@ -62,7 +62,7 @@
                                             時間の区切りは30分ごとです。
                                             </label><br>
                                             
-                                              <%= f.datetime_select  :startdate, :minute_step => 30  %> 
+                                              <%= f.datetime_select :startdate, :minute_step => 30,:start_year => Time.now.year, :end_year => Time.now.year + 2 %> 
                                         
 
                                     <%= f.submit "この日程で予約する", class: "btn btn-danger btn-wide" %>    
@@ -71,9 +71,4 @@
 
 <% end %>
 
-
- 
- 
-    
-    </div>
 

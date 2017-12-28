@@ -36,6 +36,8 @@ gem 'gravtastic'
  #ユーザーのプロフィール	
 gem 'toastr-rails'
  #メッセージのかっこよくする
+
+ #カレンダー表示
 		
 
 
