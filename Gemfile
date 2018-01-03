@@ -37,7 +37,9 @@ gem 'gravtastic'
 gem 'toastr-rails'
  #メッセージのかっこよくする
 
- #カレンダー表示
+ 
+ gem 'omniauth-facebook'
+ #facebookのログイン
 		
 
 
