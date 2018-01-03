@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  star: 1
+  impression: MyText
+  user: one
+  ticket: one
+
+two:
+  star: 1
+  impression: MyText
+  user: two
+  ticket: two

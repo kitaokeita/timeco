@@ -11,7 +11,8 @@
     <th>名前</th>
     <th>予約日時</th>
     <th>承認状況</th>
-    <th>Text</th>
+    <th>リンク</th>
+    <th>レビュー評価</th>
   </tr>
 
 
@@ -24,6 +25,7 @@
       <td><%= reservation.approval %></td>
      
       <td><%= link_to "リンク", ticket_path(reservation.ticket_id) %></td>
+      <td><%= link_to reservation.ticket.title + "のレビュー評価を書く",  new_ticket_review_path(reservation.ticket_id) %></td>
     </tr>
 
     <% end %>

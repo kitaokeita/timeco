@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   resources :tickets, shallow: true do
      resources :reservations
+     resources :reviews
   end
 
   
@@ -24,6 +25,7 @@ Rails.application.routes.draw do
 
  get "users/:id/useside" => "users#useside", as: 'useside'
   get "users/:id/lend" => "users#lend",  as: 'lend' 
+
  
 
 end

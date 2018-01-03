@@ -70,5 +70,52 @@
     <% end %>
 
 <% end %>
+</div>
+
+<div class="col-sm-12"> レビュー評価
+
+<% @review.each do |review| %>
+           
+             
+
+                  
+
+                 
+             　
+               <div class="col-md-4">
+                
+               
+                 <p class="text-center">
+                     
+               
+               
+                <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row">レビュー評価</th>
+                                <td><div id="star"> <%= review.star %></div></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">レビューの感想</th>
+                                <td><%= review.impression %>
+                                    
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                     </p>
+
+               
+
+                </div>
+                 
+                  <% end %>
+
+ </div> 
+
+
+
+
 
 
