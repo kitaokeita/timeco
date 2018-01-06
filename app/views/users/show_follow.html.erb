@@ -1,0 +1,10 @@
+<% @user.followings.each do |user| %>
+<table>
+<tr>
+  <td><%= image_tag user.gravatar_url %></td>
+  <td> <%= user.username %> </td>
+  <td><%= link_to 'プロフィール', user_path(user) %></td>
+</tr>
+
+</table>
+<% end %>

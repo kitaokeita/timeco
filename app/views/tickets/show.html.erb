@@ -52,7 +52,7 @@
 
       
     <%= form_for [@ticket, @ticket.reservation.new] do |f| %>
-
+    
     <%= f.hidden_field :ticket_id, value: @ticket.id %>
     <%= f.hidden_field :approval,  value: "未申請" %>
 
@@ -62,7 +62,14 @@
                                             時間の区切りは30分ごとです。
                                             </label><br>
                                             
-                                              <%= f.datetime_select :startdate, :minute_step => 30,:start_year => Time.now.year, :end_year => Time.now.year + 2 %> 
+                                              <%= f.datetime_select :startdate, :minute_step => 30,:start_year => Time.now.year, :end_year => Time.now.year + 2 %> <br>
+
+                                              <div class="form-group">
+
+                                              <%= f.label :待ち合わせ場所goolgemap記入 %>
+
+                                              <%= f.text_field :address, :class => "form-control" %>
+                                              </div>
                                         
 
                                     <%= f.submit "この日程で予約する", class: "btn btn-danger btn-wide" %>    

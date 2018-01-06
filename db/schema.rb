@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180103105341) do
+ActiveRecord::Schema.define(version: 20180105121439) do
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer  "follower_id"
+    t.integer  "following_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["follower_id", "following_id"], name: "index_relationships_on_follower_id_and_following_id", unique: true
+    t.index ["follower_id"], name: "index_relationships_on_follower_id"
+    t.index ["following_id"], name: "index_relationships_on_following_id"
+  end
 
   create_table "reservations", force: :cascade do |t|
     t.datetime "startdate"
@@ -20,6 +30,9 @@ ActiveRecord::Schema.define(version: 20180103105341) do
     t.datetime "updated_at", null: false
     t.integer  "user_id"
     t.integer  "ticket_id"
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
     t.index ["ticket_id"], name: "index_reservations_on_ticket_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end

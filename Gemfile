@@ -40,6 +40,10 @@ gem 'toastr-rails'
  
  gem 'omniauth-facebook'
  #facebookのログイン
+ gem 'geocoder'
+ #goolgemap
+ gem "will_paginate"
+  #ページングにおける「何ページ目」を指定するためのスコープ
 		
 
 

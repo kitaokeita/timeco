@@ -25,16 +25,82 @@
 
 
 
+
+
 	
 	
 </div>
 
 <%= form_for @reservation, method: :patch  do |f|%>
 
-<%= f.select :approval, [["承認", "承認"], ["非承認", "非承認"]] %>
+<%= f.select :approval, [["承認", "承認"], ["非承認", "非承認"]] %><br>
+<div class="form-group">
+ <%= f.label :待ち合わせ場所goolgemap記入 %>
+  <%= f.label :待ち合わせ場所の変更可能　%>
+ <%= f.text_field :address, :class => "form-control" %>
+  </div><br>
+
 
  <%= f.submit "この日程で予約する", class: "btn btn-danger btn-wide" %>    
 
 <% end %>
+
+<script type="text/javascript">
+    function initMap() {
+
+        var test ={lat: <%= @latitude %>, lng: <%= @longitude %>};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: test
+        });
+        var transitLayer = new google.maps.TransitLayer();
+        transitLayer.setMap(map);
+
+        var contentString = '住所：<%= @address %>';
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+
+        var marker = new google.maps.Marker({
+            position:test,
+            map: map,
+            title: contentString
+        });
+
+        marker.addListener('click', function() {
+            infowindow.open(map, marker);
+        });
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDv4h15F_-0U2IddlYN9NsA54H1sZRYgx0&callback=initMap">
+</script>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @reservation.address %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @reservation.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @reservation.longitude %>
+</p>
+
+<style type="text/css">
+  #map { height: 400px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:left;
+    width: 80%;}
+</style>
+<div id="map"></div>
+
 
 

@@ -1,0 +1,6 @@
+<li id="micropost-<%= ticket.id %>">
+ <%= image_tag ticket.user.gravatar_url %>
+  <span class="user"><%= link_to ticket.user.username, ticket.user %></span>
+  <span class="content"><%= ticket.content %></span>
+  
+</li>

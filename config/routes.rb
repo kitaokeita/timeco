@@ -7,9 +7,17 @@ Rails.application.routes.draw do
   get 'home/index'
 
   get 'home/show'
+  get 'home/friend'
+  
 
   root to: "home#index"
-  resources :users, :only => [:index, :show]
+  resources :users do
+    member do
+     get :following, :followers
+    end
+  end
+
+  resources :relationships, only: [:create, :destroy]
 
   resources :tickets, shallow: true do
      resources :reservations
