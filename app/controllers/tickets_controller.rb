@@ -18,8 +18,9 @@ class TicketsController < ApplicationController
 	def show
 		@ticket = Ticket.find(params[:id])
 		@review = Review.all
-		
-     
+		@user = @ticket.user
+		session[:ticket_id] = @ticket.id
+
     end
 
     def destroy

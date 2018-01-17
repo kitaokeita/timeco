@@ -44,6 +44,12 @@ gem 'toastr-rails'
  #goolgemap
  gem "will_paginate"
   #ページングにおける「何ページ目」を指定するためのスコープ
+ 
+
+ gem 'stripe'
+ gem 'rest-client'
+ #クレジット機能
+ gem 'omniauth-stripe-connect'
 		
 
 

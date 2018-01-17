@@ -24,6 +24,13 @@ Rails.application.routes.draw do
      resources :reviews
   end
 
+resources :charges
+
+get '/connect/oauth' => 'stripe#oauth', as: 'stripe_oauth'
+  get '/connect/confirm' => 'stripe#confirm', as: 'stripe_confirm'
+  get '/connect/deauthorize' => 'stripe#deauthorize', as: 'stripe_deauthorize'
+
+
   
 
  

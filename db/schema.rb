@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180105121439) do
+ActiveRecord::Schema.define(version: 20180108100934) do
 
   create_table "relationships", force: :cascade do |t|
     t.integer  "follower_id"
@@ -78,6 +78,11 @@ ActiveRecord::Schema.define(version: 20180105121439) do
     t.string   "Selfintroduction"
     t.string   "provider"
     t.string   "uid"
+    t.string   "publishable_key"
+    t.string   "secret_key"
+    t.string   "stripe_user_id"
+    t.string   "currency"
+    t.string   "stripe_account_type"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

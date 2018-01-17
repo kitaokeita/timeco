@@ -54,4 +54,8 @@ class User < ApplicationRecord
   end
   end
 
+  def connected?
+    !stripe_user_id.nil?
+  end
+
 end
