@@ -50,8 +50,6 @@ gem 'toastr-rails'
  gem 'rest-client'
  #クレジット機能
  gem 'omniauth-stripe-connect'
-		
-
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

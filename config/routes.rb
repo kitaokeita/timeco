@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'rooms/show'
+  get 'rooms/index'
+
+  get 'chat_messages/index'
+
   get 'users/index'
 
   get 'users/show'
@@ -27,20 +32,10 @@ Rails.application.routes.draw do
 resources :charges
 
 get '/connect/oauth' => 'stripe#oauth', as: 'stripe_oauth'
-  get '/connect/confirm' => 'stripe#confirm', as: 'stripe_confirm'
-  get '/connect/deauthorize' => 'stripe#deauthorize', as: 'stripe_deauthorize'
-
+get '/connect/confirm' => 'stripe#confirm', as: 'stripe_confirm'
+get '/connect/deauthorize' => 'stripe#deauthorize', as: 'stripe_deauthorize'
+get "users/:id/useside" => "users#useside", as: 'useside'
+get "users/:id/lend" => "users#lend",  as: 'lend'
 
   
-
- 
-
-	
- 
-
- get "users/:id/useside" => "users#useside", as: 'useside'
-  get "users/:id/lend" => "users#lend",  as: 'lend' 
-
- 
-
 end
